@@ -1842,6 +1842,20 @@
       "settings": {
         "fontStyle": "italic"
       }
+    },
+    {
+      "name": "TSX, JSX Tags",
+      "scope": "support.class.component.tsx, support.class.component.jsx",
+      "settings": {
+        "foreground": "#81A1C1"
+      }
+    },
+    {
+      "name": "Native Tags",
+      "scope": "entity.name.tag.tsx, entity.name.tag.jsx, entity.name.tag.html",
+      "settings": {
+        "foreground": "#D17D3B"
+      }
     }
   ],
   "colors": {
@@ -1929,11 +1943,10 @@
     "editorWhitespace.foreground": "#615B5155",
     "editor.selectionHighlightBackground": "#D17D3B33",
     "editor.selectionHighlightBorder": "#00000000",
-    "editor.findMatchBackground": "#E08B41",
-    "editor.findMatchForeground": "#1C1B19",
+    "editor.findMatchBackground": "#D17D3B66",
     "editor.findMatchBorder": "#00000000",
-    "editor.findMatchHighlightBackground": "#D17D3B66",
-    "editor.findMatchHighlightBorder": "#E08B41",
+    "editor.findMatchHighlightBackground": "#D17D3B33",
+    "editor.findMatchHighlightBorder": "#00000000",
     "editor.findRangeHighlightBackground": "#D7C8B60F",
     "editor.findRangeHighlightBorder": "#00000000",
     "editor.rangeHighlightBackground": "#ffffff0b",
