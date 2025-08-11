@@ -4,10 +4,16 @@
   "description": "A VsCode theme for calming coding sessions.",
   "version": "1.0.0",
   "publisher": "CalmingCoding",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tianrodez/calming-coding"
   },
+  "author": {
+    "name": "Tianrodez",
+    "url": "https://github.com/tianrodez"
+  },
+  "icon": "media/icon.png",
   "keywords": [
     "dark theme",
     "theme",
