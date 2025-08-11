@@ -1,0 +1,44 @@
+{
+  "name": "calming-coding",
+  "displayName": "Calming Coding",
+  "description": "A VsCode theme for calming coding sessions.",
+  "version": "1.0.0",
+  "publisher": "CalmingCoding",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tianrodez/calming-coding"
+  },
+  "keywords": [
+    "dark theme",
+    "theme",
+    "calming coding",
+    "calming syntax",
+    "calming theme",
+    "calming colors",
+    "calming aesthetics",
+    "calming design",
+    "calming interface",
+    "awesome coding",
+    "awesome syntax",
+    "awesome theme",
+    "awesome colors",
+    "awesome aesthetics",
+    "awesome design",
+    "awesome visuals"
+  ],
+  "engines": {
+    "vscode": "^1.102.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Calming Coding Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/calming-coding-dark-theme.json"
+      }
+    ]
+  }
+}
