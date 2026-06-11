@@ -1,8 +1,8 @@
 {
   "name": "calming-coding",
   "displayName": "Calming Coding",
-  "description": "A VsCode theme for calming coding sessions.",
-  "version": "1.0.2",
+  "description": "A warm, low-saturation dark Visual Studio Code theme for long, calming coding sessions. Brown and cream surfaces, a muted lavender cursor, a single warm mustard accent for actions, and a focused pumpkin orange reserved for the focus ring and active tab.",
+  "version": "1.1.0",
   "publisher": "CalmingCoding",
   "license": "MIT",
   "repository": {
