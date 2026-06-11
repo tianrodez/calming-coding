@@ -39,9 +39,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for how to structure this f
   - `welcomePage.*`, `toolbar.*`, `scm.providerBorderColor`.
 
 ### Notes
-- Theme still does not declare a light variant; the user requested only the dark theme for this iteration.
+- This release ships only a dark theme.
 
-### Refined (post-review)
+### Refined (visual polish)
 - Menu selection (`menu.selectionBackground` / `menu.selectionForeground`) changed from a low-contrast dark brown (`#6E4A28` / `#D7C8B6`, ~1.2:1) to the calm mustard with dark text (`#C9A36A` / `#1C1B19`, ~7.3:1) so the active menu item is immediately visible. Same treatment as `list.focusBackground` / `list.focusForeground` for consistency.
 - `icon.foreground` moved from cream (`#D7C8B6`) to muted (`#A1988E`) so the title-bar utility icons (Extensions, Account, Settings, etc.) stop competing with the actual title text.
 - `tab.border` changed from transparent to a subtle `#4A453F` to draw a minimal separator between adjacent inactive tabs (most useful when several tabs are open at the same size).
@@ -78,37 +78,29 @@ Six color roles were refreshed to give the theme a more alive-but-still-calming 
 
 | Role | Before | After | Character |
 |---|---|---|---|
-| Strings (green) | `#98C379` (lime apagado) | `#88C9A0` | Menta viva, menos amarillo muerto |
-| Variables / properties / JSX tags / JSON keys / numbers (mauve) | `#C593A4` (rosa polvo) | `#C2A5D9` | Lavanda suave — sin subtono rosa enfermizo |
-| Functions / info / operators (blue) | `#81A1C1` (Nord Frost) | `#88B8D4` | Cielo cálido, en familia con la paleta cálida |
-| Keywords / accent / button / warnings (mustard) | `#C9A36A` (mostaza calm) | `#D4A55C` | Ambar miel — la estrella cálida que da vida |
-| Errors (red) | `#DD6F6F` (rojo plano) | `#E58575` | Coral menos agresivo, más armónico |
-| Button hover (derived) | `#B89055` | `#C49840` | Ambar más profundo, feedback claro |
+| Strings (green) | `#98C379` | `#88C9A0` | Mint, less stale yellow |
+| Variables / properties / JSX tags / JSON keys / numbers (mauve) | `#C593A4` | `#C2A5D9` | Soft lavender — no dusty rose |
+| Functions / info / operators (blue) | `#81A1C1` | `#88B8D4` | Warm sky blue, in family with the warm palette |
+| Keywords / accent / button / warnings (mustard) | `#C9A36A` | `#D4A55C` | Honey amber — the warm star of the palette |
+| Errors (red) | `#DD6F6F` | `#E58575` | Less aggressive coral, more harmonious |
+| Button hover (derived) | `#B89055` | `#C49840` | Deeper amber, clear feedback |
 
-#### Concrete impact on the three previously reported issues
-- **`package.json` looked "dead"**: property keys used to be the dusty pink mauve. They are now lavender and instantly read as "identifier". The caret-prefixed version strings (also lavender) get a clean three-way contrast against the mint version paths and the cream punctuation.
-- **The "Forward a Port" button looked "pale"**: the button was using the calm mustard. With the new honey amber it now reads as warm and inviting, while the dark `#1C1B19` label still scores 7.65:1 (WCAG AA easily).
-- **The TSX code looked "muddy"**: JSX tags and property names were the same dead pink as JSON keys. They are now lavender; combined with the new mint strings and the new sky-blue function calls, the code gets a clear three-color rhythm (lavender + mint + cream) instead of one big block of pink.
-
-#### Verification
-- All five new accent colors keep WCAG AA 4.5:1 against the editor background `#282523` (range 5.76:1 → 7.91:1, well above the threshold).
 - Focus ring (`#E08B41`, 5 keys), cursor (`#B49FCC`), cream text (`#D7C8B6`), all background browns and all muted/border tones remain unchanged.
 - Total replacements: 491 hex tokens across the file; all old hex values have 0 occurrences after the change. No structural changes — same 368 color keys, same 489 token rules.
-- `package.json` version stays at `1.1.0` (no version bump yet, as requested).
+- Version stays at `1.1.0`.
 
 ### Refined (palette refresh v2 — fully warm, no lavender)
-After reviewing the result on real TSX/TS code, the lavender (`#C2A5D9`) used for variables / properties / JSX tags / JSON keys / numbers felt too cold against the warm brown base. The user asked to drop it entirely, and gave freedom to redesign any color that doesn't fit. The palette is now **100% warm** — no purple, no mauve, no pink, no icy blue.
+The lavender (`#C2A5D9`) used for variables / properties / JSX tags / JSON keys / numbers felt too cold against the warm brown base. The palette is now **100% warm** — no purple, no mauve, no pink, no icy blue.
 
 | Role | Before (v1) | After (v2) | Character |
 |---|---|---|---|
-| Variables / properties / JSX tags / JSON keys / numbers | `#C2A5D9` lavender | **`#C89274`** | Clay / terracotta — warm, sin nada de púrpura |
-| Strings | `#88C9A0` mint | **`#9DB87C`** | Salvia / oliva — más terrosa, en familia con la paleta |
-| Functions / info / operators | `#88B8D4` sky blue | **`#7AA0A8`** | Teal terroso — cálido, ni siquiera azul |
-| Keywords / accent / button | `#D4A55C` honey amber | `#D4A55C` | Sin cambio — ya era el ancla cálida |
-| Errors | `#E58575` coral | `#E58575` | Sin cambio — sigue armónico |
-| Hover derivado | `#C49840` | `#C49840` | Sin cambio |
+| Variables / properties / JSX tags / JSON keys / numbers | `#C2A5D9` lavender | **`#C89274`** | Clay / terracotta — warm, with no purple undertone |
+| Strings | `#88C9A0` mint | **`#9DB87C`** | Sage / olive — more earthy, in family with the palette |
+| Functions / info / operators | `#88B8D4` sky blue | **`#7AA0A8`** | Earthy teal — warm, not even blue |
+| Keywords / accent / button | `#D4A55C` honey amber | `#D4A55C` | Unchanged — already the warm anchor |
+| Errors | `#E58575` coral | `#E58575` | Unchanged — stays harmonious |
+| Hover derivado | `#C49840` | `#C49840` | Unchanged |
 
-#### New palette personality
 - **Salvia `#9DB87C`** (strings) — alive olive, evokes a fresh garden.
 - **Clay `#C89274`** (variables, JSX, JSON keys, numbers) — terracotta-like, the "earth" tone of the palette.
 - **Teal `#7AA0A8`** (functions, info) — warm cyan-green, not icy, brings a touch of sea without being cold.
@@ -116,24 +108,16 @@ After reviewing the result on real TSX/TS code, the lavender (`#C2A5D9`) used fo
 - **Coral `#E58575`** (errors) — warm red, never alarmist.
 - Cursor (`#B49FCC`) and focus pumpkin (`#E08B41`) intentionally stay cool/warm-bright as the only two "punctum" colors that aren't part of the syntax family.
 
-#### Concrete impact on the TSX screenshot
-- JSX tags (`<Tabs>`, `<TabsList>`, `<TabsTrigger>`, `<TabsContent>`): from **dead lavender** to **warm clay** — they read as "tags" without standing out coldly.
-- Property names (`defaultValue`, `onValueChange`, `className`, `currentTab`, `tabOptions`): from **lavender** to **clay** — same harmony as the JSX tags.
-- Strings (`"../ui/tabs"`, `'cookies-next/client'`, `"1"`, `"one"`, `"selectedTab"`): from **mint** to **salvia** — slightly more olive, less "cool", better with the warm family.
-- Function calls (`setCookie`): from **sky blue** to **teal terroso** — still "info" but no longer cold.
-- Keywords (`import`, `from`, `interface`, `export`, `function`, `return`): stay in **ambar** (the only "control" warm color) — clearly the warmest of the syntax roles.
-
-#### Verification
 - All new accent colors keep WCAG AA 4.5:1 against the editor background `#282523`:
-  - salvia 6.95:1, clay 5.67:1, teal 5.38:1, ambar 6.77:1, coral 5.76:1, hover 5.74:1.
+  salvia 6.95:1, clay 5.67:1, teal 5.38:1, ambar 6.77:1, coral 5.76:1, hover 5.74:1.
 - All five background browns verified as visually warm (R ≥ G ≥ B).
 - Total replacements this round: 250 hex tokens (`#88C9A0` × 43, `#C2A5D9` × 118, `#88B8D4` × 89). All old hex values now have 0 occurrences. No structural changes — same 368 color keys, same 489 token rules.
-- `package.json` version stays at `1.1.0` (no version bump yet, as requested).
+- Version stays at `1.1.0`.
 
 ### Refined (class names get a distinct color)
-In the previous round, class names (`entity.name.class`, `entity.name.type`, `entity.name.namespace`, `entity.name.type.namespace`, `entity.name.type.class`, `support.class`, `entity.other.inherited-class`, and the language-specific built-in classes) were still rendered in cream (`#D7C8B6`), which is the same color as regular text. This made class identifiers disappear in code like `Prisma.PrismaClientKnownRequestError` or `NextRequest` — the user reported that "se pierde el color de esa clase".
+Class names (`entity.name.class`, `entity.name.type`, `entity.name.namespace`, `entity.name.type.namespace`, `entity.name.type.class`, `support.class`, `entity.other.inherited-class`, and the language-specific built-in classes) were still rendered in cream (`#D7C8B6`), the same color as regular text. This made class identifiers disappear in code like `Prisma.PrismaClientKnownRequestError` or `NextRequest` — the "color of the class was lost" against the regular text.
 
-The user wants cream for regular text (they like it), but wants **class names to stand out** from cream. The natural color for that role, given the rest of the warm palette, is the existing **teal** `#7AA0A8` — the same color used for function names. This makes "named entities" (functions and classes) share a single warm-blue color, distinct from the cream text, the ambar keywords, the clay variables, and the salvia strings.
+The natural color for that role, given the rest of the warm palette, is the existing **teal** `#7AA0A8` — the same color used for function names. This makes "named entities" (functions and classes) share a single warm-blue color, distinct from the cream text, the ambar keywords, the clay variables, and the salvia strings.
 
 #### Changes
 - 13 existing rules had their foreground moved from cream `#D7C8B6` to teal `#7AA0A8`:
@@ -160,7 +144,7 @@ The user wants cream for regular text (they like it), but wants **class names to
 - Final token count: 495 (was 489). Final color count: 368 (unchanged).
 - The 3 combined "Java/Kotlin/C# type" rules now have shorter scopes (no built-in class part). Built-in types like `String`, `Object`, `Array`, `List` now use teal through dedicated rules, so they no longer "leak" through the primitive-type rules.
 - WCAG AA contrast for teal `#7AA0A8` on editor bg `#282523` remains 5.38:1.
-- `package.json` version stays at `1.1.0`.
+- Version stays at `1.1.0`.
 
 ## [1.0.0] - 2025-XX-XX
 
