@@ -6,6 +6,102 @@ Check [Keep a Changelog](http://keepachangelog.com/) for how to structure this f
 
 ## [Unreleased]
 
+### Documentation
+- CHANGELOG and README rewritten to describe the theme's evolution in objective technical terms (what changed and why), without attributing requests or feedback to specific sources.
+- README palette table updated to match the current color values: editor `#2A2521`, sidebar `#221E1A`, titlebar `#1E1A17`, overlay `#2D2923`, elevated `#382F28`, cream `#E8DCC4`, sage `#A8C97A`, clay `#D08F60`, teal `#7CB8B5`, ambar `#E0AC58`, coral `#E87865`.
+- README highlights section updated: token count 495 → 500, new bullet describing the JSX/TSX tag differentiation system (open/close/self-closing/fragment/without-attributes).
+
+### Changed
+- `list.focusBackground` leaves opaque amber (`#D4A55C`): now `#D4A55C2E` with cream text and `list.focusIconForeground` amber, matching the translucent language used everywhere else in the theme. The focus row in the Explorer no longer "shouts".
+- JSX/TSX: tags (`<Dialog>`, `<Button>`, …) are now bold amber (`#D4A55C`). JSX children text is back to cream (`#D7C8B6`) — the previous muted-italic made texts inside `<p>` and other tags practically invisible against the dark editor, killing the "alive-but-calming" feel.
+- `meta.tag` generic scope reverted to cream (`#D7C8B6`) — the muted version darkened the entire tag area and contributed to the "dead" feel.
+- `editor.lineHighlightBackground` changed from `#0000001A` (10% black, barely visible) to `#FFFFFF08` (5% white) with a `#3A3531` border, so the current line reads as a subtle "resting place" instead of a black hole.
+- `editorBracketMatch.background` changed from `#D7C8B61A` to `#D4A55C20` so the matched bracket tint matches the warm accent family.
+- `entity.name.tag` (generic HTML) moved from clay (`#C89274`) to amber (`#D4A55C`) so HTML and JSX share the same tag role.
+
+### Added
+- Modern `list.*` color variants: `list.activeSelectionIconForeground`, `list.inactiveSelectionIconForeground`, `list.hoverIconForeground`, `list.focusIconForeground`, `list.focusAndSelectionBackground/Foreground/IconForeground`, `list.inactiveFocusBackground/Foreground/IconForeground`, `list.highlightIconForeground`, `list.invalidItemForeground`, `list.errorForeground`, `list.warningForeground`.
+- Additional JSX/TSX token rules: `entity.name.tag.open.jsx`, `entity.name.tag.close.jsx`, `entity.name.type.tsx`, `entity.name.type.jsx`.
+- Consolidated the duplicate `support.class.component.tsx/jsx` rule that previously conflicted with the later `JS/TS class component` rule (both were the same scope, one teal and one amber — now a single amber rule).
+
+### Removed
+- The `meta.tag.sgml,meta.tag.other.tsx,meta.tag.other.jsx` rule was a no-op in TSX (every sub-element of a tag has a more specific scope) and its muted color risked being inherited as a fallback. Removed to keep the token list clean.
+
+
+### Refined (JSX/TSX tag differentiation)
+
+JSX/TSX tags are now differentiated by structural role, creating visible rhythm in nested code:
+
+| Role | Color | Style | Scope |
+|---|---|---|---|
+| Opening tag (with attributes) | `#A8854A` dark ochre | **bold** | `entity.name.tag.open.jsx`,`entity.name.tag.open.tsx`,`entity.name.tag.tsx`,`entity.name.tag.jsx`,`entity.name.tag.html` |
+| Closing tag | `#D08F60` clay | regular | `entity.name.tag.close.jsx`,`entity.name.tag.close.tsx` |
+| Self-closing tag | `#A8854A` dark ochre | **bold italic** | `entity.name.tag.self-closing.jsx`,`entity.name.tag.self-closing.tsx`,`entity.name.tag.self-closing.html`,`entity.name.tag.self-closing` |
+| Fragment (`<>`, `</>`) | `#D08F60` clay | italic | `entity.name.tag.fragment.jsx`,`entity.name.tag.fragment.tsx`,`entity.name.tag.fragment.html`,`entity.name.tag.fragment`,`meta.brace.curly.jsx`,`meta.brace.curly.tsx` |
+| Tag without attributes | `#D08F60` clay | italic | `meta.tag.without-attributes.tsx`,`meta.tag.without-attributes.jsx` |
+| HTML element (in HTML files) | `#D08F60` clay | italic | `entity.name.tag.html`,`entity.name.tag.xhtml` |
+| Generic tag (XML, Markdown fallback) | `#D08F60` clay | italic | `entity.name.tag` |
+
+Open vs close creates a hue-shifted rhythm (dark ochre → clay). Self-closing vs paired is differentiated by italic. Fragments and tags without attributes get the clay italic treatment to distinguish them as "structural" rather than "actor" components.
+
+Total token rules: **500**. Color count: **394**.
+
+### Refined (palette refresh v3 — "calm but alive")
+
+The previous palette was technically correct but sat in a too-narrow chroma band that made code feel "muddy" — beautiful in spec, lifeless on screen. Same warm color families, ~15% more chroma, plus warmer backgrounds with a red undertone. The result: the code stops looking like "pastel dust" and starts feeling like a curated workspace that has presence.
+
+| Role | Before | After | Chroma | Notes |
+|---|---|---|---|---|
+| Editor background | `#282523` | `#2A2521` | — | Warmer, more red |
+| Sidebar / panel / titlebar | `#211F1D` | `#221E1A` | — | Warmer |
+| Activity bar / status bar | `#1C1B19` | `#1E1A17` | — | Warmer |
+| Overlays (hover, widgets, notifications) | `#2A2723` | `#2D2923` | — | Warmer |
+| Selection / hover surfaces | `#3A3531` | `#382F28` | — | Warmer |
+| Cream text | `#D7C8B6` | `#E8DCC4` | +chroma | Warmer, more golden (parchment, not paper) |
+| Ambar (keywords, accents, JSX components, button) | `#D4A55C` | `#E0AC58` | 50% → 65% | Honey star with body |
+| Salvia (strings) | `#9DB87C` | `#A8C97A` | 28% → 45% | Garden green, not dead olive |
+| Clay (variables, JSX tags, properties) | `#C89274` | `#D08F60` | 30% → 50% | Terracotta with presence |
+| Teal (functions, classes) | `#7AA0A8` | `#7CB8B5` | 15% → 35% | Cyan with life, not gray-blue |
+| Coral (errors) | `#E58575` | `#E87865` | 38% → 48% | More red-orange punch |
+| Button hover | `#C49840` | `#C89644` | +chroma | Deeper amber |
+| Focus pumpkin | `#E08B41` | unchanged | — | Still the warm "punctum" |
+| Cursor lavender | `#B49FCC` | unchanged | — | Still the cool "punctum" |
+
+All 9 syntax/UI colors verified against the new editor background `#2A2521`:
+
+- Cream `#E8DCC4` → **11.17:1** (AAA)
+- Ambar `#E0AC58` → **7.37:1** (AAA)
+- Salvia `#A8C97A` → **8.16:1** (AAA)
+- Clay `#D08F60` → **5.62:1** (AA)
+- Teal `#7CB8B5` → **6.77:1** (AA)
+- Coral `#E87865` → **5.27:1** (AA)
+- Pumpkin `#E08B41` → **5.73:1** (AA)
+- Lavender `#B49FCC` → **6.33:1** (AA)
+- Muted `#A1988E` → **5.34:1** (AA)
+
+Total: ~280 hex tokens replaced across the file. All 226 ambar tokens (including 25 alpha-tinted variants used in selections, hover, brackets, inlay hints, etc.) migrated preserving their alpha channel.
+
+### Added (bracket pair colorization)
+
+Nested bracket guides in 6 levels, cycling through the warm palette: ambar → salvia → clay → teal → coral → pumpkin. Subtle (40% alpha) when not active, full color when the cursor is beside the bracket. This adds a small but consistent splash of color as you descend into deeply nested code, without ever leaving the warm palette family.
+
+```jsonc
+"editorBracketPairGuide.background1":        "#E0AC5866",  // ambar
+"editorBracketPairGuide.background2":        "#A8C97A66",  // salvia
+"editorBracketPairGuide.background3":        "#D08F6066",  // clay
+"editorBracketPairGuide.background4":        "#7CB8B566",  // teal
+"editorBracketPairGuide.background5":        "#E8786566",  // coral
+"editorBracketPairGuide.background6":        "#E08B4166",  // pumpkin
+"editorBracketPairGuide.activeBackground1":  "#E0AC58",
+"editorBracketPairGuide.activeBackground2":  "#A8C97A",
+"editorBracketPairGuide.activeBackground3":  "#D08F60",
+"editorBracketPairGuide.activeBackground4":  "#7CB8B5",
+"editorBracketPairGuide.activeBackground5":  "#E87865",
+"editorBracketPairGuide.activeBackground6":  "#E08B41"
+```
+
+Color totals: 394 (was 382, +12 bracket pair guides). Token rules: 497 (unchanged, structure identical).
+
 ## [1.1.0] - 2026-06-10
 
 ### Changed
@@ -124,7 +220,7 @@ The natural color for that role, given the rest of the warm palette, is the exis
   - `entity.name.namespace`, `entity.name.type.namespace`, `support.class` + `entity.name.type.class`, `entity.name.class.identifier.namespace.type`, `entity.name.class` (+ `variable.other.class.js/ts`), `entity.other.inherited-class`, `entity.name.namespace.php`, `entity.name.namespace.cpp`, `support.class.builtin.php` + `support.class.php`, `support.class.builtin.js` + `support.class.builtin.ts`.
   - The combined `Java type`, `Kotlin type`, `C# type` rules were **split**: the primitive-type halves (`storage.type.primitive.*`, `support.type.*`, `storage.type.cs`, `support.type.c/cpp/posix-reserved.c`, `support.type.swift/vb.asp`, `support.type.python/builtin.python`, `support.type.primitive.ts/builtin.ts`, etc.) stay cream (these are primitive types like `int`, `string`, `boolean` — not class names); the built-in-class halves (`support.class.builtin.java`, `support.class.builtin.kotlin`, `support.class.builtin.cs`) get the new teal rules.
 - 6 new rules appended after the `Native Tags` entry:
-  - `entity.name.type` → teal (user-defined type names like `MyType`).
+  - `entity.name.type` → teal (type names defined by the theme, like `MyType`).
   - `support.class.builtin.java` → teal (`String`, `Object`, etc.).
   - `support.class.builtin.kotlin` → teal.
   - `support.class.builtin.cs` → teal.

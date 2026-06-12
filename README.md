@@ -18,7 +18,8 @@ A single dark theme built around a brown-and-cream base, a honey-mustard accent 
 
 - **Fully warm palette.** Brown and cream surfaces, a single honey-mustard accent reserved for focus, and four living warm tones (sage, clay, teal, coral) for syntax. No cold purples, no icy blues, no neon.
 - **Designed for long sessions.** Low contrast between adjacent surfaces (so your eyes don't jump), high contrast between syntax roles (so the code still reads), and a dedicated overlay tone for popups so they feel like popups.
-- **Comprehensive language coverage.** 495 token rules covering Python, JavaScript / TypeScript, Go, Rust, PHP, Java, Kotlin, C#, C / C++, Ruby, SQL, HTML, CSS / SCSS / Less, JSON, YAML, Markdown, Shell / Bash, Dockerfile, TOML, Prisma, and Zod.
+- **Comprehensive language coverage.** 500 token rules covering Python, JavaScript / TypeScript, Go, Rust, PHP, Java, Kotlin, C#, C / C++, Ruby, SQL, HTML, CSS / SCSS / Less, JSON, YAML, Markdown, Shell / Bash, Dockerfile, TOML, Prisma, and Zod.
+- **JSX/TSX tag differentiation.** Tags are differentiated by role: opening (bold dark ochre), closing (regular clay, hue-shifted), self-closing (bold italic dark ochre), fragments (italic clay), and tags without attributes (italic clay) — creating visible rhythm in nested JSX return statements.
 - **Framework-aware.** Native rules for React, Next.js, Vue, Angular, Svelte, Astro, Django, Laravel / Blade, Express, NestJS, Spring, Rails, Tailwind, Prisma, and Zod — so the syntax you actually write is colored the way you expect.
 - **Accessible.** Every accent color clears WCAG AA 4.5:1 against the editor background; the focus ring and primary button clear it on every supported surface.
 - **Whole-editor coverage.** Tokens for editor widgets, hover, suggest, peek view, notifications, terminals, notebooks, testing, debug, inlay hints, sticky scroll, inline edit, lightbulb, multi-root tabs, and more — so the theme doesn't fall back to default Dark+ in any view.
@@ -27,17 +28,17 @@ A single dark theme built around a brown-and-cream base, a honey-mustard accent 
 
 | Role | Color | Hex | Used for |
 |---|---|---|---|
-| Editor background | warm brown | `#282523` | The main code surface |
-| Sidebar / panel | deeper brown | `#211F1D` | Explorer, panels |
-| Titlebar / statusbar | deepest brown | `#1C1B19` | Top and bottom bars |
-| Overlay | between surface and editor | `#2A2723` | Hover, suggest, peek view, notifications |
-| Elevated | lighter brown | `#3A3531` | Active rows, inactive tabs, menus |
-| Cream | warm off-white | `#D7C8B6` | Default text, primitive types |
-| **Sage** | alive olive-green | `#9DB87C` | Strings |
-| **Clay** | warm terracotta | `#C89274` | Variables, properties, JSX tags, JSON keys, numbers |
-| **Teal** | warm cyan-green | `#7AA0A8` | Functions, info, named entities (classes, namespaces) |
-| **Ambar** | rich honey | `#D4A55C` | Keywords, accents, primary button |
-| **Coral** | soft warm red | `#E58575` | Errors |
+| Editor background | warm brown | `#2A2521` | The main code surface |
+| Sidebar / panel | deeper brown | `#221E1A` | Explorer, panels |
+| Titlebar / statusbar | deepest brown | `#1E1A17` | Top and bottom bars |
+| Overlay | between surface and editor | `#2D2923` | Hover, suggest, peek view, notifications |
+| Elevated | lighter brown | `#382F28` | Active rows, inactive tabs, menus |
+| Cream | warm off-white | `#E8DCC4` | Default text, primitive types |
+| **Sage** | alive olive-green | `#A8C97A` | Strings |
+| **Clay** | warm terracotta | `#D08F60` | Variables, properties, JSX tags, JSON keys, numbers |
+| **Teal** | warm cyan-green | `#7CB8B5` | Functions, info, named entities (classes, namespaces) |
+| **Ambar** | rich honey | `#E0AC58` | Keywords, accents, primary button |
+| **Coral** | soft warm red | `#E87865` | Errors |
 | Focus pumpkin | vibrant orange | `#E08B41` | Focus ring, active tab top border (focus only) |
 | Cursor lavender | soft lavender | `#B49FCC` | Cursor only — the single cool focal point |
 
