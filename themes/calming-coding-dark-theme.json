@@ -1791,7 +1791,7 @@
       "scope": "comment, punctuation.definition.comment",
       "settings": {
         "fontStyle": "italic",
-        "foreground": "#615B51"
+        "foreground": "#A1988E"
       }
     },
     {
@@ -2319,7 +2319,7 @@
       "name": "Go build tag",
       "scope": "comment.line.number-sign.go,comment.block.go,comment.line.double-slash.go",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -2421,7 +2421,7 @@
       "name": "Rust documentation",
       "scope": "comment.line.documentation.rust,comment.block.documentation.rust,comment.line.documentation.rs,comment.block.documentation.rs",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -2565,7 +2565,7 @@
       "name": "PHP PHPDoc",
       "scope": "comment.block.documentation.phpdoc,comment.line.documentation.php,comment.block.documentation.phpdoc.php",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -3124,7 +3124,7 @@
       "name": "CSS comment",
       "scope": "comment.block.css,comment.block.scss,comment.block.less,comment.line.semicolon.css,comment.line.semicolon.scss,comment.line.semicolon.less",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -3296,7 +3296,7 @@
       "name": "Shell comment",
       "scope": "comment.line.number-sign.shell",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -3700,7 +3700,7 @@
       "name": "C/C++ comment",
       "scope": "comment.line.double-slash.c,comment.line.double-slash.cpp,comment.block.c,comment.block.cpp,comment.line.documentation.c,comment.block.documentation.cpp",
       "settings": {
-        "foreground": "#615B51",
+        "foreground": "#A1988E",
         "fontStyle": "italic"
       }
     },
@@ -3759,7 +3759,7 @@
     "editor.wordHighlightBackground": "#E0AC581A",
     "editor.wordHighlightStrongBackground": "#E0AC5840",
     "editor.findMatchBackground": "#E0AC5855",
-    "editor.findMatchForeground": "#1E1A17",
+    "editor.findMatchForeground": "#E8DCC4",
     "editor.findMatchBorder": "#00000000",
     "editor.findMatchHighlightBackground": "#E0AC5833",
     "editor.findMatchHighlightForeground": "#E8DCC4",
@@ -4015,8 +4015,8 @@
     "debugToolBar.border": "#E8DCC4",
     "debugExceptionWidget.background": "#E87865",
     "debugExceptionWidget.border": "#E8DCC4",
-    "diffEditor.insertedTextBackground": "#A8C97A30",
-    "diffEditor.removedTextBackground": "#E8786530",
+    "diffEditor.insertedTextBackground": "#A8C97A22",
+    "diffEditor.removedTextBackground": "#E8786522",
     "diffEditor.border": "#4A453F",
     "merge.currentHeaderBackground": "#5E8D6A",
     "merge.currentContentBackground": "#5E8D6A20",

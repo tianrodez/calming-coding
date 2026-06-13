@@ -27,6 +27,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for how to structure this f
 ### Removed
 - The `meta.tag.sgml,meta.tag.other.tsx,meta.tag.other.jsx` rule was a no-op in TSX (every sub-element of a tag has a more specific scope) and its muted color risked being inherited as a fallback. Removed to keep the token list clean.
 
+### Fixed
+- Comments on diff-inserted/removed lines were nearly invisible (~1.4:1 contrast) because the muted comment foreground `#615B51` was sitting over the translucent diff backgrounds. Two coordinated changes:
+  - `diffEditor.insertedTextBackground` / `diffEditor.removedTextBackground` alpha lowered from `0x30` (18.8%) to `0x22` (13.3%) so the diff highlight is less aggressive.
+  - Comment foreground in the 7 explicit `comment.*` rules (main + Go, Rust, PHP, CSS, Shell, C/C++) changed from `#615B51` to `#A1988E` (the theme's existing muted color, also used for `icon.foreground`, `tab.inactiveForeground`, `statusBar.foreground`, `breadcrumb.foreground`). Contrast on the editor background: 2.28:1 → 5.34:1. On the new diff-inserted background: 1.70:1 → 4.01:1. Italic style preserved.
+- `editor.findMatchForeground` changed from `#1E1A17` (dark brown, ~2.2:1 over the translucent amber background) to `#E8DCC4` (cream, ~6.0:1), matching the existing `editor.findMatchHighlightForeground`. The active match still stands out because its background alpha (`0x55`, 33%) is higher than the other-match background (`0x33`, 20%).
 
 ### Refined (JSX/TSX tag differentiation)
 
